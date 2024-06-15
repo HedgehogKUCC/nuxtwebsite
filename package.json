@@ -11,9 +11,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.12.1",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.3"
+    "@element-plus/nuxt": "1.0.9",
+    "bootstrap": "5.3.3",
+    "element-plus": "2.7.5",
+    "normalize.css": "8.0.1",
+    "nuxt": "3.12.1",
+    "vue": "3.4.27",
+    "vue-router": "4.3.3"
   },
-  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631"
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631",
+  "devDependencies": {
+    "sass": "1.77.5"
+  }
 }
