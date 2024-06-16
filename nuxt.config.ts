@@ -7,5 +7,17 @@ export default defineNuxtConfig({
     css: [
         'normalize.css',
         '~/assets/scss/all.scss'
-    ]
+    ],
+    // vite: {
+    //     css: {
+    //         preprocessorOptions: {
+    //             scss: {
+    //                 additionalData: `
+    //                     @use "~/assets/scss/variable" as *;
+    //                     @use "~/assets/scss/container" as *;
+    //                 `
+    //             }
+    //         }
+    //     }
+    // },
 })
