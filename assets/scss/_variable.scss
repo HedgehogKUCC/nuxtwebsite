@@ -1,5 +1,11 @@
 :root {
   --el-color-primary: #919191 !important;
+  --el-font-size-extra-large: 40px !important;
+  --el-font-size-large: 32px !important;
+  --el-font-size-medium: 28px !important;
+  --el-font-size-base: 24px !important;
+  --el-font-size-small: 20px !important;
+  --el-font-size-extra-small: 16px !important;
   --cus-color-primary-50: #FFFFFF;
   --cus-color-primary-100: #FAFAFA;
   --cus-color-primary-200: #F1F1F1;
@@ -16,29 +22,29 @@ html {
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 28px;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 20px;
-}
-
-h6 {
-  font-size: 16px;
-}
+//h1 {
+//  font-size: 40px;
+//}
+//
+//h2 {
+//  font-size: 32px;
+//}
+//
+//h3 {
+//  font-size: 28px;
+//}
+//
+//h4 {
+//  font-size: 24px;
+//}
+//
+//h5 {
+//  font-size: 20px;
+//}
+//
+//h6 {
+//  font-size: 16px;
+//}
 
 $variable-prefix: bs- !default;
 $prefix: $variable-prefix !default;

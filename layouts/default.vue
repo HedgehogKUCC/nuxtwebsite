@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'CHAN CHENG Website',
-  description: 'CHAN CHENG Website',
-  ogTitle: 'CHAN CHENG Website',
-  ogDescription: 'CHAN CHENG Website',
+  title: '展誠的網站',
+  description: '展誠的網站',
+  ogTitle: '展誠的網站',
+  ogDescription: '展誠的網站',
 })
 </script>
 

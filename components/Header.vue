@@ -1,12 +1,15 @@
 <script setup lang="ts">
-
+import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 </script>
 
 <template>
 <div class="header">
   <el-container direction="horizontal" class="container align-items-center">
     <el-header height="auto">
-      <h1>展誠</h1>
+      <a href="/" title="回首頁">
+        <DotLottieVue style="width: 100px; height: 100px;" autoplay loop src="https://lottie.host/c1858a42-23f4-4b0b-8655-2b07726b2c95/TSJoSaZ0Sw.json" />
+        <el-text tag="h1">展誠</el-text>
+      </a>
     </el-header>
     <nav class="d-flex">
       <a href="#" class="active">
@@ -42,12 +45,20 @@
 <style lang="scss" scoped>
 .el-header {
   margin-right: 318px;
-  padding: 24px 0;
+  padding: 0;
 }
 
 .header {
   border-bottom: solid 1px var(--cus-color-primary-200);
   box-shadow: var(--el-box-shadow-lighter);
+
+  h1 {
+    font: 0 / 0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+  }
 
   nav > a {
     display: block;
@@ -122,10 +133,5 @@
       }
     }
   }
-
-}
-
-h1 {
-  margin: 0;
 }
 </style>
