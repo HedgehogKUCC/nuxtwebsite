@@ -10,7 +10,7 @@
       具有 4 年經驗的
       <el-text tag="strong">全端工程師</el-text>
     </el-text>
-    <el-text tag="p" class="mb-3">熱衷技術和內在成長</el-text>
+    <el-text tag="p" class="mb-3">熱衷技術和心靈成長</el-text>
     <el-text tag="span">FRONTEND / BACKEND / UI/UX</el-text>
     <div class="introduction-icons">
       <a href="https://github.com/HedgehogKUCC" target="_blank" title="GitHub" class="me-3">
@@ -54,7 +54,6 @@
       background-image: url('/images/mark.png');
       background-repeat: no-repeat;
       background-position: 0 100%;
-      background-size: contain;
       color: var(--cus-color-primary-900);
     }
   }

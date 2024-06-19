@@ -9,16 +9,15 @@ export default defineNuxtConfig({
         'normalize.css',
         '~/assets/scss/all.scss'
     ],
-    // vite: {
-    //     css: {
-    //         preprocessorOptions: {
-    //             scss: {
-    //                 additionalData: `
-    //                     @use "~/assets/scss/variable" as *;
-    //                     @use "~/assets/scss/container" as *;
-    //                 `
-    //             }
-    //         }
-    //     }
-    // },
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `
+                        @use "~/assets/scss/mixins/breakpoints" as *;
+                    `
+                }
+            }
+        }
+    },
 })
