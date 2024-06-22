@@ -47,18 +47,9 @@ import {DotLottieVue} from "@lottiefiles/dotlottie-vue";
     flex-direction: column;
 
     button {
-      padding: 0;
-      outline: none;
-      appearance: none;
-      user-select: none;
-      overflow: hidden;
-      vertical-align: middle;
-      white-space: nowrap;
-      line-height: 1;
       background-color: var(--cus-color-primary-50);
       border: solid 1px var(--cus-color-primary-400);
       border-radius: var(--el-border-radius-base);
-      cursor: pointer;
 
       .el-link {
         padding: 20px 90px;

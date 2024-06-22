@@ -1,5 +1,19 @@
 <script setup lang="ts">
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
+import { ElMessageBox } from 'element-plus';
+
+const handlerClick = () => {
+  ElMessageBox({
+    message: '籌備中 ...',
+    center: true,
+    showConfirmButton: false,
+    customClass: 'message-modal',
+    customStyle: {
+      padding: '50px'
+    }
+  })
+      .catch(() => {})
+}
 </script>
 
 <template>
@@ -10,27 +24,27 @@ import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
       <el-text tag="h1">展誠</el-text>
     </a>
     <nav class="d-flex">
-      <a href="#" class="active">
+      <a href="/" class="active">
         首頁
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
       </a>
-      <a href="#" class="three-word">
+      <a href="/works" class="three-word" @click.prevent="handlerClick">
         作品集
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
       </a>
-      <a href="#" class="three-word">
+      <a href="https://medium.com/conrad-ku" class="three-word" target="_blank">
         部落格
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
       </a>
-      <a href="#" class="four-word">
+      <a href="#service" class="four-word">
         服務項目
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
       </a>
-      <a href="#" class="three-word">
+      <a href="mailto:ccc908925@gmail.com#" class="three-word">
         聯絡我
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>

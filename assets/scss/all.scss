@@ -6,3 +6,25 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+button {
+  padding: 0;
+  outline: none;
+  user-select: none;
+  overflow: hidden;
+  vertical-align: middle;
+  white-space: nowrap;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.message-modal {
+  p {
+    font-size: 50px;
+    color: var(--cus-color-primary-700);
+  }
+
+  .el-message-box__btns {
+    padding: 0;
+  }
+}
