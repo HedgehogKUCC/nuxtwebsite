@@ -45,3 +45,28 @@
 .me-3 {
   margin-right: 16px !important;
 }
+
+.decoration-line {
+  margin: 0 16px;
+  width: 94px;
+  border: solid 1px var(--cus-color-primary-400);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    background: var(--cus-color-primary-400);
+    border-radius: 50%;
+  }
+}
+
+.decoration-left-circle::before {
+  left: -6px;
+}
+
+.decoration-right-circle::before {
+  right: -6px;
+}

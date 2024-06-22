@@ -3,14 +3,12 @@ import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 </script>
 
 <template>
-<div class="header">
-  <el-container direction="horizontal" class="container align-items-center">
-    <el-header height="auto">
-      <a href="/" title="回首頁">
-        <DotLottieVue style="width: 100px; height: 100px;" autoplay loop src="https://lottie.host/c1858a42-23f4-4b0b-8655-2b07726b2c95/TSJoSaZ0Sw.json" />
-        <el-text tag="h1">展誠</el-text>
-      </a>
-    </el-header>
+<header class="header">
+  <div class="container d-flex align-items-center">
+    <a href="/" title="回首頁" class="header-logo">
+      <DotLottieVue style="width: 100px; height: 100px;" autoplay loop src="https://lottie.host/c1858a42-23f4-4b0b-8655-2b07726b2c95/TSJoSaZ0Sw.json" />
+      <el-text tag="h1">展誠</el-text>
+    </a>
     <nav class="d-flex">
       <a href="#" class="active">
         首頁
@@ -38,19 +36,18 @@ import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
         <span class="fake bottom-line"></span>
       </a>
     </nav>
-  </el-container>
-</div>
+  </div>
+</header>
 </template>
 
 <style lang="scss" scoped>
-.el-header {
-  margin-right: 318px;
-  padding: 0;
-}
-
 .header {
   border-bottom: solid 1px var(--cus-color-primary-200);
   box-shadow: var(--el-box-shadow-lighter);
+
+  &-logo {
+    margin-right: 318px;
+  }
 
   h1 {
     font: 0 / 0 a;

@@ -4,22 +4,11 @@ import {DotLottieVue} from "@lottiefiles/dotlottie-vue";
 </script>
 
 <template>
-<!--<el-container direction="horizontal" class="footer">-->
-<!--  <el-footer>-->
-<!--    <div class="container">-->
-<!--      <div class="d-flex">-->
-<!--        <div>-->
-<!--          <DotLottieVue style="width: 100px; height: 100px;" autoplay loop src="https://lottie.host/c1858a42-23f4-4b0b-8655-2b07726b2c95/TSJoSaZ0Sw.json" />-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </el-footer>-->
-<!--</el-container>-->
-<section class="footer">
+<footer class="footer">
   <div class="container">
     <div class="d-flex justify-content-between align-items-end">
       <div class="footer-contact">
-        <el-text tag="p" class="mb-1">如果想和我分享技術或心靈文章</el-text>
+        <el-text tag="p" class="mb-1">如果想和我分享好文章</el-text>
         <el-text tag="p" class="mb-4">歡迎直接與我聯絡</el-text>
         <el-link type="info" href="mailto:ccc908925@gmail.com">ccc908925@gmail.com</el-link>
       </div>
@@ -37,7 +26,7 @@ import {DotLottieVue} from "@lottiefiles/dotlottie-vue";
       </div>
     </div>
   </div>
-</section>
+</footer>
 </template>
 
 <style lang="scss" scoped>
