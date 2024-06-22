@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import GoTop from "~/components/GoTop.vue";
+
 useSeoMeta({
   title: '展誠的網站',
   description: '展誠的網站',
@@ -13,6 +15,7 @@ useSeoMeta({
   <Header />
   <NuxtPage />
   <Footer />
+  <GoTop />
 </div>
 </template>
 

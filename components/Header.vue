@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 import { ElMessageBox } from 'element-plus';
+import type {AnchorHTMLAttributes} from "vue";
 
 const handlerClick = () => {
   ElMessageBox({
@@ -13,6 +14,31 @@ const handlerClick = () => {
     }
   })
       .catch(() => {})
+}
+
+const scrollToHref = (e: Event) => {
+  const href = (e.target as AnchorHTMLAttributes).href;
+
+  if (!href) {
+    console.error('href is missing');
+    return;
+  }
+
+  const id = href.split('#')[1];
+  const section = document.getElementById(id);
+
+  if (!section) {
+    console.error(`#${id} is missing`);
+    return;
+  }
+
+  const top = section.offsetTop;
+
+  window.scrollTo({
+    top,
+    left: 0,
+    behavior: "smooth"
+  });
 }
 </script>
 
@@ -39,7 +65,7 @@ const handlerClick = () => {
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
       </a>
-      <a href="#service" class="four-word">
+      <a href="#service" class="four-word" @click.prevent="scrollToHref">
         服務項目
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
