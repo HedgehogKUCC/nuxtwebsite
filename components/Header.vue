@@ -129,6 +129,11 @@ const scrollToHref = (e: Event) => {
 .header {
   border-bottom: solid 1px var(--cus-color-primary-200);
   box-shadow: var(--el-box-shadow-lighter);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--cus-color-primary-50);
 
   &-wrap {
     display: flex;
