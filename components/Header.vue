@@ -3,6 +3,9 @@ import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 import { ElMessageBox } from 'element-plus';
 import type {AnchorHTMLAttributes} from "vue";
 
+const route = useRoute();
+const fullPath = route.fullPath;
+
 const handlerClick = () => {
   ElMessageBox({
     message: '籌備中 ...',
@@ -50,7 +53,7 @@ const scrollToHref = (e: Event) => {
       <el-text tag="h1">展誠</el-text>
     </a>
     <nav class="d-flex">
-      <a href="/" class="active">
+      <a href="/" :class="{ active: fullPath === '/' }">
         首頁
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
