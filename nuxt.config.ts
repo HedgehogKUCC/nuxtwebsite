@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     modules: [
         '@element-plus/nuxt',
         'nuxt-bootstrap-icons',
+        'nuxt-swiper',
     ],
     css: [
         'normalize.css',

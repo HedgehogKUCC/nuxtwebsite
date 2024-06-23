@@ -1,5 +1,18 @@
 <script setup lang="ts">
+import { paginationProps } from "element-plus";
+import {Pagination} from "swiper/modules";
+
 const { data: carousels } = await useFetch('/api/carousel');
+
+const swiperConfig = {
+  modules: [
+    SwiperAutoplay,
+  ],
+  slidesPerView: 3,
+  spaceBetween: 30,
+  autoplay: true,
+  loop: true,
+}
 </script>
 
 <template>
@@ -10,13 +23,15 @@ const { data: carousels } = await useFetch('/api/carousel');
       精選文章
       <span class="decoration-line decoration-right-circle"></span>
     </h2>
-    <el-carousel :interval="4000" type="card" height="300px" indicator-position="none">
-      <el-carousel-item v-for="c in carousels" :key="c.id" :style="`background-image: url(${c.image})`">
-        <a :href="c.link" target="_blank" class="el-carousel__item-relative">
-          <h3>{{ c.title }}</h3>
-        </a>
-      </el-carousel-item>
-    </el-carousel>
+    <Swiper v-bind="swiperConfig">
+      <SwiperSlide
+        v-for="slide in carousels"
+        :key="slide.id"
+      >
+        <a :href="slide.link" target="_blank" class="swiper-slide-image" :style="`background-image: url(${slide.image})`"></a>
+        <a :href="slide.link" target="_blank" class="swiper-slide-title">{{ slide.title }}</a>
+      </SwiperSlide>
+    </Swiper>
   </div>
 </section>
 </template>
@@ -34,32 +49,55 @@ const { data: carousels } = await useFetch('/api/carousel');
     font-size: var(--el-font-size-large);
   }
 
-  .el-carousel__item {
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .swiper-slide {
 
-    &-relative {
+    &-image,
+    &-title {
       display: block;
-      position: relative;
-      width: 100%;
-      height: 100%;
+      text-decoration: none;
     }
 
-    h3 {
-      margin: 0;
-      padding: 0 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 40px;
-      background-color: rgba(30, 30, 30, 0.3);
-      color: var(--cus-color-primary-50);
-      font-size: var(--el-font-size-base);
+    &-image {
+      height: 300px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &-title {
+      margin: 4px 0 0;
+      text-align: center;
+      color: var(--cus-color-primary-900);
+      font-size: var(--el-font-size-small);
     }
   }
+
+  //.el-carousel__item {
+  //  background-position: 50% 50%;
+  //  background-repeat: no-repeat;
+  //  background-size: cover;
+  //
+  //  &-relative {
+  //    display: block;
+  //    position: relative;
+  //    width: 100%;
+  //    height: 100%;
+  //  }
+  //
+  //  h3 {
+  //    margin: 0;
+  //    padding: 0 10px;
+  //    display: flex;
+  //    justify-content: center;
+  //    align-items: center;
+  //    position: absolute;
+  //    bottom: 0;
+  //    width: 100%;
+  //    height: 40px;
+  //    background-color: rgba(30, 30, 30, 0.3);
+  //    color: var(--cus-color-primary-50);
+  //    font-size: var(--el-font-size-base);
+  //  }
+  //}
 }
 </style>
