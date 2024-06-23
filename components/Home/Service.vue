@@ -24,25 +24,25 @@ const handlerClick = () => {
       <span class="decoration-line decoration-right-circle"></span>
     </h2>
     <ul class="service-list">
-      <li>
+      <li class="service-list-1">
         <div class="service-list-icon">
           <BootstrapIcon name="code-slash" />
         </div>
         <h3>切版服務</h3>
       </li>
-      <li>
+      <li class="service-list-2">
         <div class="service-list-icon">
           <BootstrapIcon name="filetype-js" />
         </div>
         <h3>前端開發</h3>
       </li>
-      <li>
+      <li class="service-list-3">
         <div class="service-list-icon">
           <BootstrapIcon name="filetype-php" />
         </div>
         <h3>後端開發</h3>
       </li>
-      <li>
+      <li class="service-list-4">
         <div class="service-list-icon">
           <BootstrapIcon name="chat-square-text" />
         </div>
@@ -62,34 +62,56 @@ const handlerClick = () => {
 
 <style scoped lang="scss">
 .service {
-  padding: 120px 0;
+  padding: 80px 0;
   background-image: url("/images/homepage-services-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 
+  @include media-breakpoint-up(sm) {
+    padding: 120px 0;
+  }
+
   h4 {
-    margin: 0 0 40px;
+    margin: 0 0 24px;
     text-align: center;
     font-size: var(--el-font-size-medium);
     color: var(--cus-color-primary-700);
+
+    @include media-breakpoint-up(sm) {
+      margin: 0 0 40px;
+    }
   }
 
   &-title {
-    margin: 0 0 80px;
+    margin: 0 0 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--cus-color-primary-700);
-    font-size: var(--el-font-size-large);
+    font-size: var(--el-font-size-base);
+
+    @include media-breakpoint-up(sm) {
+      margin: 0 0 80px;
+      font-size: var(--el-font-size-large);
+    }
   }
 
   &-list {
-    margin: 0 0 80px;
+    margin: 0 0 40px;
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(sm) {
+      margin: 0 0 80px;
+    }
+
+    @include media-breakpoint-up(md) {
+      justify-content: space-between;
+    }
 
     &-icon {
       margin-bottom: 24px;
@@ -106,10 +128,48 @@ const handlerClick = () => {
       height: 306px;
       border-radius: 16px;
       color: var(--cus-color-primary-50);
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      @include media-breakpoint-up(md) {
+        width: 340px;
+        height: 340px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 230px;
+        height: 230px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 270px;
+        height: 270px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        width: 306px;
+        height: 306px;
+      }
+    }
+
+    &-1,
+    &-2 {
+      margin: 0 0 16px;
+
+      @include media-breakpoint-up(lg) {
+        margin: 0;
+      }
+    }
+
+    &-3 {
+      margin: 0 0 16px;
+
+      @include media-breakpoint-up(md) {
+        margin: 0;
+      }
     }
 
     .bi {
