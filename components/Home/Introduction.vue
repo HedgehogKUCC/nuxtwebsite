@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<section class="introduction d-flex justify-content-end align-items-center">
+<section class="introduction">
   <div class="introduction-content">
     <el-text tag="h2">嗨！我是 展誠</el-text>
     <el-text tag="p">
@@ -28,26 +28,59 @@
 <style scoped lang="scss">
 .introduction {
   max-width: 1920px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  @include media-breakpoint-up(xl) {
+    padding: 0 0 0 60px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 
   &-content {
-    max-width: 430px; width: 100%; margin-right: 10px;
+    padding: 40px;
+    max-width: 430px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-up(xl) {
+      margin-right: 10px;
+      padding: 10px;
+      display: block;
+    }
 
     h2 {
       margin: 0 0 24px;
-      font-size: var(--el-font-size-extra-large);
       color: var(--cus-color-primary-900);
+
+      @include media-breakpoint-up(sm) {
+        font-size: var(--el-font-size-extra-large);
+      }
     }
 
     p {
       margin: 0 0 8px;
       padding-left: 2px;
-      font-size: var(--el-font-size-base);
       color: var(--cus-color-primary-900);
+      font-size: var(--el-font-size-extra-small);
+
+      @include media-breakpoint-up(sm) {
+        font-size: var(--el-font-size-base);
+      }
     }
 
     span {
       padding-left: 2px;
       color: var(--cus-color-primary-400);
+      font-size: var(--el-font-size-extra-small);
+
+      @include media-breakpoint-up(sm) {
+        font-size: var(--el-font-size-base);
+      }
     }
 
     strong {
@@ -55,21 +88,34 @@
       background-repeat: no-repeat;
       background-position: 0 100%;
       color: var(--cus-color-primary-900);
+      font-size: var(--el-font-size-extra-small);
+
+      @include media-breakpoint-up(sm) {
+        font-size: var(--el-font-size-base);
+      }
     }
   }
 
   &-icons {
-    margin-top: 60px;
+    margin-top: 24px;
     display: flex;
     align-items: center;
+
+    @include media-breakpoint-up(xl) {
+      margin-top: 60px;
+    }
 
     a {
       display: block;
     }
 
     .bi {
-      font-size: var(--el-font-size-extra-large);
+      font-size: var(--el-font-size-base);
       color: var(--cus-color-primary-600);
+
+      @include media-breakpoint-up(sm) {
+        font-size: var(--el-font-size-extra-large);
+      }
     }
   }
 
