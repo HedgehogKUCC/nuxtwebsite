@@ -6,7 +6,7 @@ import {DotLottieVue} from "@lottiefiles/dotlottie-vue";
 <template>
 <footer class="footer">
   <div class="container">
-    <div class="d-flex justify-content-between align-items-end">
+    <div class="footer-wrap">
       <div class="footer-contact">
         <el-text tag="p" class="mb-1">如果想和我分享好文章</el-text>
         <el-text tag="p" class="mb-4">歡迎直接與我聯絡</el-text>
@@ -31,11 +31,34 @@ import {DotLottieVue} from "@lottiefiles/dotlottie-vue";
 
 <style lang="scss" scoped>
 .footer {
-  padding: 120px 0;
+  padding: 60px 0;
   background-image: url("/images/footer-bg-lg.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media-breakpoint-up(sm) {
+    padding: 120px 0;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 
   &-contact {
+    margin-bottom: 40px;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0;
+    }
+
     p,
     a {
       font-size: var(--el-font-size-small)
@@ -52,7 +75,15 @@ import {DotLottieVue} from "@lottiefiles/dotlottie-vue";
       border-radius: var(--el-border-radius-base);
 
       .el-link {
-        padding: 20px 90px;
+        padding: 20px 80px;
+
+        @include media-breakpoint-up(sm) {
+          padding: 20px 60px;
+        }
+
+        @include media-breakpoint-up(md) {
+          padding: 20px 90px;
+        }
       }
 
       &:hover {
