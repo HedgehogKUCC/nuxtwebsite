@@ -51,7 +51,7 @@ const handlerClick = () => {
     </ul>
     <h4>想要合作或瞭解更多？</h4>
     <div class="service-link">
-      <a href="/services" title="點擊瞭解詳細服務內容" @click.prevent="handlerClick">
+      <a href="/" title="點擊瞭解詳細服務內容" @click.prevent="handlerClick">
         詳細內容與合作流程
         <BootstrapIcon name="caret-right" />
       </a>

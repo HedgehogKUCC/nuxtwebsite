@@ -59,7 +59,7 @@ const scrollToHref = (e: Event) => {
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
       </a>
-      <a href="/works" class="three-word" @click.prevent="handlerClick">
+      <a href="/" class="three-word" @click.prevent="handlerClick">
         作品集
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
@@ -94,7 +94,7 @@ const scrollToHref = (e: Event) => {
       </a>
     </li>
     <li>
-      <a href="/works" class="three-word" @click.prevent="handlerClick">
+      <a href="/" class="three-word" @click.prevent="handlerClick">
         作品集
         <span class="fake top-line"></span>
         <span class="fake bottom-line"></span>
