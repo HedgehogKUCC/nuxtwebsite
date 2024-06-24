@@ -1,17 +1,23 @@
 <script setup lang="ts">
-import { paginationProps } from "element-plus";
-import {Pagination} from "swiper/modules";
-
-const { data: carousels } = await useFetch('/api/carousel');
+const { data: articles } = await useFetch('/api/articles');
 
 const swiperConfig = {
   modules: [
     SwiperAutoplay,
   ],
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: 1,
   autoplay: true,
   loop: true,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    }
+  }
 }
 </script>
 
@@ -25,11 +31,11 @@ const swiperConfig = {
     </h2>
     <Swiper v-bind="swiperConfig">
       <SwiperSlide
-        v-for="slide in carousels"
-        :key="slide.id"
+        v-for="article in articles"
+        :key="article.id"
       >
-        <a :href="slide.link" target="_blank" class="swiper-slide-image" :style="`background-image: url(${slide.image})`"></a>
-        <a :href="slide.link" target="_blank" class="swiper-slide-title">{{ slide.title }}</a>
+        <a :href="article.link" target="_blank" class="swiper-slide-image" :style="`background-image: url(${article.image})`"></a>
+        <a :href="article.link" target="_blank" class="swiper-slide-title">{{ article.title }}</a>
       </SwiperSlide>
     </Swiper>
   </div>
@@ -38,15 +44,23 @@ const swiperConfig = {
 
 <style scoped lang="scss">
 .article {
-  padding: 120px 0;
+  padding: 80px 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 120px 0;
+  }
 
   &-title {
-    margin: 0 0 80px;
+    margin: 0 0 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--cus-color-primary-700);
     font-size: var(--el-font-size-large);
+
+    @include media-breakpoint-up(sm) {
+      margin: 0 0 80px;
+    }
   }
 
   .swiper-slide {
@@ -71,33 +85,5 @@ const swiperConfig = {
       font-size: var(--el-font-size-small);
     }
   }
-
-  //.el-carousel__item {
-  //  background-position: 50% 50%;
-  //  background-repeat: no-repeat;
-  //  background-size: cover;
-  //
-  //  &-relative {
-  //    display: block;
-  //    position: relative;
-  //    width: 100%;
-  //    height: 100%;
-  //  }
-  //
-  //  h3 {
-  //    margin: 0;
-  //    padding: 0 10px;
-  //    display: flex;
-  //    justify-content: center;
-  //    align-items: center;
-  //    position: absolute;
-  //    bottom: 0;
-  //    width: 100%;
-  //    height: 40px;
-  //    background-color: rgba(30, 30, 30, 0.3);
-  //    color: var(--cus-color-primary-50);
-  //    font-size: var(--el-font-size-base);
-  //  }
-  //}
 }
 </style>

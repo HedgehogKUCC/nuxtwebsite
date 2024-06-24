@@ -88,11 +88,10 @@ const handlerClick = () => {
     justify-content: center;
     align-items: center;
     color: var(--cus-color-primary-700);
-    font-size: var(--el-font-size-base);
+    font-size: var(--el-font-size-large);
 
     @include media-breakpoint-up(sm) {
       margin: 0 0 80px;
-      font-size: var(--el-font-size-large);
     }
   }
 
